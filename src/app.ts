@@ -1,6 +1,7 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+import authRoutes from './routes/authRoutes';
 
 // --- Create Express App ---
 const app: Application = express();
@@ -21,10 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // --- API Routes ---
-// All API routes will be mounted here under the '/api' prefix.
-// Example: app.use('/api/v1/users', userRoutes);
-//          app.use('/api/v1/goals', goalRoutes);
-
+app.use('/api/auth', authRoutes);
 
 // --- Health Check Route ---
 // A simple route to verify that the server is running.
