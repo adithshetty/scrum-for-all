@@ -13,7 +13,7 @@ const generateToken = (user: IUser): string => {
     console.error("JWT_SECRET is not defined in environment variables.");
     throw new Error("Server configuration error.");
   }
-  return jwt.sign({ id: user.name, email: user.email }, JWT_SECRET, {
+  return jwt.sign({ id: user._id, name: user.name, email: user.email }, JWT_SECRET, {
     expiresIn: "1d", // Token expires in 1 day
   });
 };

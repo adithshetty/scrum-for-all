@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import authRoutes from './routes/authRoutes';
+import goalRoutes from './routes/goalRoutes';
 
 // --- Create Express App ---
 const app: Application = express();
@@ -23,6 +24,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // --- API Routes ---
 app.use('/api/auth', authRoutes);
+app.use('/api/goals', goalRoutes);
+
 
 // --- Health Check Route ---
 // A simple route to verify that the server is running.
