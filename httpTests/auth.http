@@ -1,0 +1,22 @@
+
+###
+# --- 1. Register a New User ---
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "email": "testuser123@example.com",
+  "password": "password123"
+}
+
+###
+
+# --- 2. Login with Existing User ---
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "testuser123@example.com",
+  "password": "password123"
+}

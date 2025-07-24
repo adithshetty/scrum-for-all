@@ -3,6 +3,7 @@ import { Schema as MongooseSchema, model as MongooseModel, Document as MongooseD
 export interface ITask extends MongooseDocument {
   userStoryId: MongooseSchema.Types.ObjectId;
   title: string;
+  description: string;
   status: 'to-do' | 'in-progress' | 'done';
   createdAt: Date;
 }
@@ -12,6 +13,7 @@ const taskSchema = new MongooseSchema<ITask>({
   title: { type: String, required: true, trim: true },
   status: { type: String, enum: ['to-do', 'in-progress', 'done'], default: 'to-do', required: true },
   createdAt: { type: Date, default: Date.now },
+  description: { type: String, trim: true }
 });
 
 export const TaskModel = MongooseModel<ITask>('Task', taskSchema);

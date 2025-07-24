@@ -1,8 +1,9 @@
-import { Schema, model, Document } from 'mongoose';
+import { Schema, model, Document, Types } from 'mongoose';
 import bcrypt from 'bcryptjs';
 
 // Interface to define the properties of a User document
 export interface IUser extends Document {
+  _id: Types.ObjectId;
   email: string;
   hashedPassword?: string; // Optional because it won't be sent back to the client
   name: string;

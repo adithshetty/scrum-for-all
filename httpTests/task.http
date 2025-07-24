@@ -1,0 +1,17 @@
+@userStoryId = "6881815c3ee76b41178da55e"
+
+### Create a New Task
+POST {{baseUrl}}/tasks
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "New Task",
+  "description": "Description of the new task",
+  "userStoryId": {{userStoryId}},
+  "status": "to-do"
+}
+
+### Get All Tasks
+GET {{baseUrl}}/tasks
+Authorization: Bearer {{token}}

@@ -1,0 +1,18 @@
+@epicId = "68817f463ee76b41178da559"
+
+### Create a New User Story
+POST {{baseUrl}}/user-stories
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "New User Story",
+  "description": "Description of the new user story",
+  "epicId": {{epicId}},
+  "status": "to-do",
+  "storyPoints": 5
+}
+
+### Get All User Stories
+GET {{baseUrl}}/user-stories
+Authorization: Bearer {{token}}

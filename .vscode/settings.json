@@ -1,0 +1,12 @@
+{
+  "rest-client.environmentVariables": {
+    "local": {
+      "baseUrl":"http://localhost:5000/api",
+      "token": "your_local_token_here"
+    },
+    "production": {
+      "baseUrl":"",
+      "token": "your_production_token_here"
+    }
+  }
+}

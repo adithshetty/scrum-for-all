@@ -1,6 +1,12 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+import authRoutes from './routes/authRoutes';
+import goalRoutes from './routes/goalRoutes';
+import userStoryRoutes from './routes/userStoryRoutes';
+import sprintRoutes from './routes/sprintRoutes';
+import taskRoutes from './routes/taskRoutes';
+import epicRoutes from './routes/epicRoutes';
 
 // --- Create Express App ---
 const app: Application = express();
@@ -21,9 +27,12 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // --- API Routes ---
-// All API routes will be mounted here under the '/api' prefix.
-// Example: app.use('/api/v1/users', userRoutes);
-//          app.use('/api/v1/goals', goalRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/goals', goalRoutes);
+app.use('/api/user-stories', userStoryRoutes);
+app.use('/api/sprints', sprintRoutes);
+app.use('/api/tasks', taskRoutes);
+app.use('/api/epics', epicRoutes);
 
 
 // --- Health Check Route ---

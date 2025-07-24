@@ -1,0 +1,16 @@
+### Create a New Sprint
+POST {{baseUrl}}/sprints
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "New Sprint",
+  "sprintGoal": "Goal of the new sprint",
+  "status": "upcoming",
+  "startDate": "2025-07-23",
+  "endDate": "2025-08-06"
+}
+
+### Get All Sprints
+GET {{baseUrl}}/sprints
+Authorization: Bearer {{token}}

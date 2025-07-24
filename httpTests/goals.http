@@ -1,0 +1,14 @@
+### Create a New Goal
+POST {{baseUrl}}/goals
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "New Goal",
+  "description": "Description of the new goal",
+  "targetDate": "2023-12-31"
+}
+
+### Get All Goals
+GET {{baseUrl}}/goals
+Authorization: Bearer {{token}}
