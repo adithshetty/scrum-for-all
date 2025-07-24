@@ -1,7 +1,7 @@
 import { Schema as MongooseSchema, model as MongooseModel, Document as MongooseDocument } from 'mongoose';
 
 export interface ISprint extends MongooseDocument {
-  goalId: MongooseSchema.Types.ObjectId;
+  userId: MongooseSchema.Types.ObjectId;
   title: string;
   sprintGoal?: string;
   status: 'upcoming' | 'active' | 'completed';
@@ -11,7 +11,7 @@ export interface ISprint extends MongooseDocument {
 }
 
 const sprintSchema = new MongooseSchema<ISprint>({
-  goalId: { type: MongooseSchema.Types.ObjectId, ref: 'Goal', required: true, index: true },
+  userId: { type: MongooseSchema.Types.ObjectId, ref: 'User', required: true, index: true },
   title: { type: String, required: true, trim: true },
   sprintGoal: { type: String, trim: true },
   status: { type: String, enum: ['upcoming', 'active', 'completed'], default: 'upcoming', required: true },

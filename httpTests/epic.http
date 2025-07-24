@@ -1,0 +1,19 @@
+# variable for goal ID
+@goalId = "688166ce3d496399e7e91d60"
+
+### Create a New Epic
+POST {{baseUrl}}/epics
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "goalId": {{goalId}},
+  "title": "New Epic",
+  "description": "Description of the new epic",
+  "status": "not-started",
+  "order" : 1
+}
+
+### Get All Epics
+GET {{baseUrl}}/epics
+Authorization: Bearer {{token}}

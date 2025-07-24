@@ -42,7 +42,7 @@ erDiagram
     }
     SPRINTS {
         ObjectId _id PK
-        ObjectId goalId FK
+        ObjectId userId FK
         string title
         date startDate
         date endDate
@@ -142,7 +142,7 @@ A time-boxed period dedicated to completing a set of `tasks`.
 | Field Name   | Data Type | Description                              | Constraints/Notes                                 |
 | :----------- | :-------- | :--------------------------------------- | :------------------------------------------------ |
 | `_id`        | ObjectId  | Unique identifier for the document.      | Primary Key                                       |
-| `goalId`     | ObjectId  | Reference to the `goals` collection.     | Required, Indexed, Foreign Key                    |
+| `userId`     | ObjectId  | Reference to the `users` collection.     | Required, Indexed, Foreign Key                    |
 | `title`      | String    | The name of the sprint (e.g., "Week 1"). | Required                                          |
 | `sprintGoal` | String    | The specific objective for this sprint.  | Optional                                          |
 | `status`     | String    | Current status of the sprint.            | Required, Enum: `upcoming`, `active`, `completed` |
